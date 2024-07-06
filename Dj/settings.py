@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ew6ls(f=mteb$dydk(-qef$2=h#5+i0m#a+=z&kq@7!mxgr=4q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['madhu-pidz.onrender.com']
 
 
 # Application definition
