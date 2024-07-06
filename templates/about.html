@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %} About {% endblock title %}
+{% block aboutactive %} active {% endblock aboutactive %}
+
+{% block body %}
+{% load static %}
+<style>
+  /* Custom CSS for enhanced design */
+  .carousel-item {
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+
+  .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  }
+</style>
+
+<div class="container py-5">
+  <!-- Carousel Section -->
+  <div id="carouselExampleControls" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card shadow-lg p-4">
+          <h2 class="card-title text-center">About Me</h2>
+          <p class="card-text">Hello, I'm R MADHUSUDHANA, a passionate developer with expertise in various programming languages and technologies. I enjoy building applications that solve real-world problems and have experience in ML and Deep Learning Algorithms. My journey in software development has been driven by curiosity and a desire to learn and innovate.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card shadow-lg p-4">
+          <h2 class="card-title text-center">Interests</h2>
+          <p class="card-text">In addition to coding, I have a keen interest in [mention other relevant interests or activities related to your profession or hobbies]. I thrive in collaborative environments where creativity and teamwork are valued, and I'm always eager to take on new challenges that expand my skillset.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card shadow-lg p-4">
+          <h2 class="card-title text-center">Projects</h2>
+          <p class="card-text">Feel free to explore my portfolio and projects to get a glimpse of my work and capabilities. If you have any questions or would like to connect, don't hesitate to reach out!</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Skills Section -->
+  <h2 class="text-center mb-4">Skills</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-4 bg-light">
+        <img src="{% static 'img/ab1.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Programming Languages</h5>
+          <p class="card-text">Python, Java, C, SQL</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-4 bg-light">
+        <img src="{% static 'img/ab2.png' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Web Frameworks & Database</h5>
+          <p class="card-text">Django, Flask, MYSQL, MongoDB</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-4 bg-light">
+        <img src="{% static 'img/ab.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">ML Tools & Frameworks</h5>
+          <p class="card-text">Numpy, Pandas, nltk, OpenCv, Tensorflow, Pytorch, Langchain</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // JavaScript for Carousel Navigation
+  const carousel = document.querySelector('#carouselExampleControls');
+  const carouselInstance = new bootstrap.Carousel(carousel, {
+    interval: false // Disable auto-slide
+  });
+  
+  // Previous slide button
+  const prevButton = document.querySelector('.carousel-control-prev');
+  prevButton.addEventListener('click', () => {
+    carouselInstance.prev();
+  });
+  
+  // Next slide button
+  const nextButton = document.querySelector('.carousel-control-next');
+  nextButton.addEventListener('click', () => {
+    carouselInstance.next();
+  });
+</script>
+{% endblock body %}

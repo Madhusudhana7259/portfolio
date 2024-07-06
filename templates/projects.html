@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %} Projects {% endblock title %}
+{% block projectsactive %} active {% endblock projectsactive %}
+
+{% block body %}
+{% load static %}
+<div class="container my-3">
+  <h2 class="text-center my-3">Projects</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/new1.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Automated Fire Detection And Suppression System</h5>
+          <p class="card-text">An intelligent system for real-time fire detection and automatic suppression integrating an Arduino board, actuators, and machine learning.</p>
+          <a href="https://github.com/Madhusudhana7259/Automated-Fire-Detection-And-Suppression-System" class="btn btn-primary">Click Here</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/new2.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Student Performance Prediction</h5>
+          <p class="card-text">Predicting student performance through machine learning algorithms and data analysis techniques. It involves all ascpects of ML Life Cycle.</p>
+          <a href="https://github.com/Madhusudhana7259/Student-Performance-Prediction" class="btn btn-primary">Click Here</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/new3.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Project Showcase</h5>
+          <p c4ass="card-text">Discover a showcase of innovative projects demonstrating expertise in Machine Learning, data science, and software development.</p>
+          <a href="https://github.com/Madhusudhana7259" class="btn btn-primary">Click Here</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock body %}
