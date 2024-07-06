@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ew6ls(f=mteb$dydk(-qef$2=h#5+i0m#a+=z&kq@7!mxgr=4q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -153,7 +153,7 @@ STATICFILES_DIRS = [
     # "/var/www/static/",
 ]
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 if not DEBUG:
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
     STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
