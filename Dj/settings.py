@@ -25,9 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ew6ls(f=mteb$dydk(-qef$2=h#5+i0m#a+=z&kq@7!mxgr=4q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['madhu-pidz.onrender.com']
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
