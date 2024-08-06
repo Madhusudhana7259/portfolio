@@ -103,13 +103,13 @@ WSGI_APPLICATION = 'Dj.wsgi.application'
 #         conn_max_age=600
 #     )
 # }
-DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://pf_helt_user:dAdtyLAiJVCIHdRXFn48ruHrtSdPHZLl@localhost:5432/pf_helt',
-        conn_max_age=600
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://pf_helt_user:dAdtyLAiJVCIHdRXFn48ruHrtSdPHZLl@localhost:5432/pf_helt',
+#         conn_max_age=600
+#     )
+# }
 
 
 # Password validation

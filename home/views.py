@@ -20,8 +20,8 @@ def contact(request):
         phone = request.POST['phone']
         desc = request.POST['desc']
         print(name,email,phone,desc)
-        ins = Contact(name=name, email=email, phone=phone, desc=desc)
-        ins.save()
+        # ins = Contact(name=name, email=email, phone=phone, desc=desc)
+        # ins.save()
         print("Db is written")
         send_mail(
             "Details",
