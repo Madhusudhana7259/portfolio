@@ -19,22 +19,23 @@ def contact(request):
         email = request.POST['email']
         phone = request.POST['phone']
         desc = request.POST['desc']
-        print(name,email,phone,desc)
-        ins = Contact(name=name, email=email, phone=phone, desc=desc)
-        ins.save()
-        print("Db is written")
-        send_mail(
-            "Details",
-            f"""
-                Name: {name},
-                Email: {email}
-                Phone: {phone}
-                Description: {desc}
-            """,
-            "290anamika@gmail.com",
-            ["madhusudhanar2020@gmail.com"],
-            fail_silently=False,
-        )
+        # print(name,email,phone,desc)
+        if name!="":
+            ins = Contact(name=name, email=email, phone=phone, desc=desc)
+            ins.save()
+            print("Db is written")
+            send_mail(
+                "Details",
+                f"""
+                    Name: {name},
+                    Email: {email}
+                    Phone: {phone}
+                    Description: {desc}
+                """,
+                "290anamika@gmail.com",
+                ["madhusudhanar2020@gmail.com"],
+                fail_silently=False,
+            )
     # return HttpResponse("This is contact Page")
     return render(request,'contact.html')
 
