@@ -1,44 +1,67 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %} Projects {% endblock title %}
-{% block projectsactive %} active {% endblock projectsactive %}
+{% block title %}Projects{% endblock title %}
+{% block projectsactive %}text-indigo-600{% endblock projectsactive %}
 
 {% block body %}
-{% load static %}
-<div class="container my-3">
-  <h2 class="text-center my-3">Projects</h2>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <img src="{% static 'img/new1.jpg' %}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Automated Fire Detection And Suppression System</h5>
-          <p class="card-text">An intelligent system for real-time fire detection and automatic suppression integrating an Arduino board, actuators, and machine learning.</p>
-          <a href="https://github.com/Madhusudhana7259/Automated-Fire-Detection-And-Suppression-System" class="btn btn-primary">Click Here</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <img src="{% static 'img/new2.jpg' %}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Student Performance Prediction</h5>
-          <p class="card-text">Predicting student performance through machine learning algorithms and data analysis techniques. It involves all ascpects of ML Life Cycle.</p>
-          <a href="https://github.com/Madhusudhana7259/Student-Performance-Prediction" class="btn btn-primary">Click Here</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <img src="{% static 'img/new3.jpg' %}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Project Showcase</h5>
-          <p c4ass="card-text">Discover a showcase of innovative projects demonstrating expertise in Machine Learning, data science, and software development.</p>
-          <a href="https://github.com/Madhusudhana7259" class="btn btn-primary">Click Here</a>
-        </div>
-      </div>
-    </div>
-
+<!-- Hero Banner -->
+<section class="relative h-64 flex items-center justify-center text-center text-white"
+         style="background: url('{% static "img/ph1.jpg" %}') center/cover no-repeat;">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="relative z-10">
+    <h1 class="text-3xl md:text-4xl font-bold">My Projects</h1>
+    <p class="text-gray-200 mt-2">Showcasing AI, ML & Full-stack work</p>
   </div>
-</div>
+</section>
+
+<!-- Featured Project -->
+<section class="container mx-auto px-6 py-16">
+  <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="zoom-in">
+    <img src="{% static 'img/new1.jpg' %}" alt="Featured Project" class="w-full h-72 object-cover">
+    <div class="p-6">
+      <h2 class="text-2xl font-bold mb-2">🔥 Automated Fire Detection System</h2>
+      <p class="mb-4">An intelligent real-time fire detection & suppression system integrating ML & Arduino.</p>
+      <a href="https://github.com/Madhusudhana7259/Automated-Fire-Detection-And-Suppression-System" target="_blank" 
+         class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- Other Projects -->
+<section class="bg-gray-100 py-16">
+  <div class="container mx-auto px-6">
+    <h3 class="text-2xl font-bold text-center mb-10">Other Projects</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project Card -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg" data-aos="fade-up">
+        <img src="{% static 'img/new2.jpg' %}" class="w-full h-56 object-cover transition group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-center text-white transition">
+          <h3 class="text-xl font-bold mb-2">Autonomous Research Lab Agent</h3>
+          <a href="https://automated-research-assistant-jjgw.onrender.com/" target="_blank"
+             class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">Application</a>
+        </div>
+      </div>
+
+      <div class="relative group rounded-xl overflow-hidden shadow-lg" data-aos="fade-up">
+        <img src="{% static 'img/new1.jpg' %}" class="w-full h-56 object-cover transition group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-center text-white transition">
+          <h3 class="text-xl font-bold mb-2">End-End LLMops</h3>
+          <a href="https://github.com/Madhusudhana7259/AI-TRAVEL-ITINEARY" target="_blank"
+             class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="relative group rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <img src="{% static 'img/new3.jpg' %}" class="w-full h-56 object-cover transition group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-center text-white transition">
+          <h3 class="text-xl font-bold mb-2">Portfolio Showcase</h3>
+          <a href="https://github.com/Madhusudhana7259" target="_blank"
+             class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock body %}

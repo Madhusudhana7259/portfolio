@@ -1,112 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %} About {% endblock title %}
-{% block aboutactive %} active {% endblock aboutactive %}
+{% block title %}About{% endblock title %}
+{% block aboutactive %}text-indigo-600{% endblock aboutactive %}
 
 {% block body %}
-{% load static %}
-<style>
-  /* Custom CSS for enhanced design */
-  .carousel-item {
-    background-color: #f8f9fa; /* Light background color */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  }
-
-  .card {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-
-  .card:hover {
-    transform: translateY(-5px); /* Lift card on hover */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-  }
-</style>
-
-<div class="container py-5">
-  <!-- Carousel Section -->
-  <div id="carouselExampleControls" class="carousel slide mb-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="card shadow-lg p-4">
-          <h2 class="card-title text-center">About Me</h2>
-          <p class="card-text">Hello, I'm R MADHUSUDHANA, a passionate developer with expertise in various programming languages and technologies. I enjoy building applications that solve real-world problems and have experience in ML and Deep Learning Algorithms. My journey in software development has been driven by curiosity and a desire to learn and innovate.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-lg p-4">
-          <h2 class="card-title text-center">Interests</h2>
-          <p class="card-text">In addition to coding, I have a keen interest in working on Personal Projects and Reading Technical Books and Journals. I thrive in collaborative environments where creativity and teamwork are valued, and I'm always eager to take on new challenges that expand my skillset.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-lg p-4">
-          <h2 class="card-title text-center">Projects</h2>
-          <p class="card-text">Feel free to explore my portfolio and projects to get a glimpse of my work and capabilities. If you have any questions or would like to connect, don't hesitate to reach out!</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<!-- Hero Banner -->
+<section class="relative h-80 flex items-center justify-center text-center text-white"
+         style="background: url('{% static "img/ab2.png" %}') center/cover no-repeat;">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10">
+    <img src="{% static 'img/pic1.jpg' %}" alt="Profile" class="w-32 h-32 mx-auto rounded-full border-4 border-white shadow-lg mb-4">
+    <h1 class="text-3xl md:text-4xl font-bold">About Me</h1>
+    <p class="text-gray-200 mt-2">AI • ML • Full Stack Developer</p>
   </div>
+</section>
 
-  <!-- Skills Section -->
-  <h2 class="text-center mb-4">Skills</h2>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card shadow-sm mb-4 bg-light">
-        <img src="{% static 'img/ab1.jpg' %}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title text-center">Programming Languages</h5>
-          <p class="card-text">Python, Java, C, SQL</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card shadow-sm mb-4 bg-light">
-        <img src="{% static 'img/ab2.png' %}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title text-center">Web Frameworks & Database</h5>
-          <p class="card-text">Django, Flask, MYSQL, MongoDB</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card shadow-sm mb-4 bg-light">
-        <img src="{% static 'img/ab.jpg' %}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title text-center">ML Tools & Frameworks</h5>
-          <p class="card-text">Numpy, Pandas, nltk, OpenCv, Tensorflow, Pytorch, Langchain</p>
-        </div>
-      </div>
+<!-- About Section -->
+<section class="container mx-auto px-6 py-16">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <img src="{% static 'img/ab.jpg' %}" class="rounded-xl shadow-lg" data-aos="fade-right">
+    <div data-aos="fade-left">
+      <h2 class="text-2xl font-bold mb-4">Who I Am</h2>
+      <p class="mb-6 text-gray-700">I’m <strong>R Madhusudhana</strong>, a passionate developer blending academic excellence with hands-on experience. I enjoy solving real-world problems with cutting-edge technology in AI, ML, and full-stack development.</p>
+      <p class="text-gray-600">I thrive in collaborative environments, love building scalable systems, and keep exploring new tech like LLMs and LangChain.</p>
     </div>
   </div>
-</div>
+</section>
 
-<script>
-  // JavaScript for Carousel Navigation
-  const carousel = document.querySelector('#carouselExampleControls');
-  const carouselInstance = new bootstrap.Carousel(carousel, {
-    interval: false // Disable auto-slide
-  });
-  
-  // Previous slide button
-  const prevButton = document.querySelector('.carousel-control-prev');
-  prevButton.addEventListener('click', () => {
-    carouselInstance.prev();
-  });
-  
-  // Next slide button
-  const nextButton = document.querySelector('.carousel-control-next');
-  nextButton.addEventListener('click', () => {
-    carouselInstance.next();
-  });
-</script>
+<!-- Skills -->
+<section class="bg-gray-100 py-16">
+  <div class="container mx-auto px-6">
+    <h2 class="text-2xl font-bold text-center mb-10">Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">🐍 Python, C, SQL</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="200">🌐 Django, Flask</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="300">🗄️ MySQL, MongoDB, GCP</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">🤖 TensorFlow, PyTorch</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="100">🧠 NLP, LangChain</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="200">📊 Pandas, NumPy</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="300">⚡ Sklearn,OpenCV</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="300">⚡ Dockers, ELK stack</div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="container mx-auto px-6 py-16">
+  <h2 class="text-2xl font-bold text-center mb-12">My Journey</h2>
+  <div class="relative border-l-4 border-indigo-600 max-w-2xl mx-auto">
+    <div class="ml-6 mb-10" data-aos="fade-up">
+      <h4 class="font-semibold">2024–2026</h4>
+      <p>🎓 Master’s in Artificial Intelligence — Ramaiah Institute of Technology</p>
+    </div>
+    <div class="ml-6 mb-10" data-aos="fade-up" data-aos-delay="200">
+      <h4 class="font-semibold">2023</h4>
+      <p>💻 Internship at Varcons Technology — ML Development</p>
+    </div>
+    <div class="ml-6" data-aos="fade-up" data-aos-delay="400">
+      <h4 class="font-semibold">2020–2024</h4>
+      <p>🎓 Bachelor’s Degree in Computer Science - RNS Institute of Technology</p>
+    </div>
+  </div>
+</section>
 {% endblock body %}
